@@ -34,7 +34,9 @@
   let shouldShowAccountInfoPanel = $state(false);
   let shouldShowNotificationPanel = $state(false);
   let innerWidth: number = $state(0);
-  const hasUnreadNotifications = $derived(notificationManager.notifications.length > 0);
+  const unreadCount = $derived(notificationManager.unreadCount);
+  const hasUnreadNotifications = $derived(unreadCount > 0);
+  const unreadBadgeLabel = $derived(unreadCount > 99 ? '99+' : `${unreadCount}`);
 
   onMount(async () => {
     try {
@@ -146,9 +148,10 @@
 
             {#if hasUnreadNotifications}
               <div
-                class="pointer-events-none absolute top-0 right-1 flex size-5 items-center justify-center rounded-full border bg-primary text-[10px] font-bold text-light"
+                data-testid="notification-unread-badge"
+                class="pointer-events-none absolute top-0 right-1 flex h-5 min-w-5 items-center justify-center rounded-full border bg-primary px-1 text-[10px] font-bold text-light"
               >
-                {notificationManager.notifications.length}
+                {unreadBadgeLabel}
               </div>
             {/if}
           </div>

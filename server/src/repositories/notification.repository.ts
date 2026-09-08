@@ -50,8 +50,27 @@ export class NotificationRepository {
         }),
       )
       .where('deletedAt', 'is', null)
+      .$if(!!dto.search, (qb) =>
+        qb.where((eb) =>
+          eb.or([eb('title', 'ilike', `%${dto.search}%`), eb('description', 'ilike', `%${dto.search}%`)]),
+        ),
+      )
       .orderBy('createdAt', 'desc')
       .execute();
+  }
+
+  async statistics(userId: string) {
+    const result = await this.db
+      .selectFrom('notification')
+      .select((eb) => [
+        eb.fn.countAll<string>().as('total'),
+        eb.fn.countAll<string>().filterWhere('readAt', 'is', null).as('unread'),
+      ])
+      .where('userId', '=', userId)
+      .where('deletedAt', 'is', null)
+      .executeTakeFirstOrThrow();
+
+    return { total: Number(result.total), unread: Number(result.unread) };
   }
 
   create(notification: Insertable<NotificationTable>) {
@@ -67,7 +86,7 @@ export class NotificationRepository {
       .selectFrom('notification')
       .select(columns.notification)
       .where('id', '=', id)
-      .where('deletedAt', 'is not', null)
+      .where('deletedAt', 'is', null)
       .executeTakeFirst();
   }
 
@@ -98,6 +117,16 @@ export class NotificationRepository {
       .updateTable('notification')
       .set({ deletedAt: DateTime.now().toJSDate() })
       .where('id', 'in', ids)
+      .execute();
+  }
+
+  async deleteAllRead(userId: string) {
+    await this.db
+      .updateTable('notification')
+      .set({ deletedAt: DateTime.now().toJSDate() })
+      .where('userId', '=', userId)
+      .where('readAt', 'is not', null)
+      .where('deletedAt', 'is', null)
       .execute();
   }
 }
