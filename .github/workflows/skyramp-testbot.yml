@@ -2,36 +2,46 @@ name: Skyramp Testbot
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, closed]
   issue_comment:
     types: [created]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.head.ref || github.run_id }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.issue.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' && github.event.action != 'closed' && github.actor != 'skyramp-testbot[bot]' }}
 
 jobs:
   testbot:
-    runs-on: ubuntu-latest
+    # Only run for pull_request events or issue_comment on PRs mentioning @skyramp-testbot
     if: >-
-      github.event_name != 'issue_comment' ||
-      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '@skyramp-testbot') && github.event.comment.user.login != 'skyramp-testbot[bot]')
+    runs-on: 'ubuntu-latest'
     permissions:
       contents: write
       pull-requests: write
+      checks: write
+
     steps:
-      # NOTE: testbot v0.10.x action inputs are camelCase. test_directory is NOT an input
-      # (it comes from .skyramp/workspace.yml). SUT = Immich server built from source on :2285.
-      - uses: actions/checkout@v4
+      - name: Generate GitHub App Token
+        id: skyramp-testbot-app-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
+        with:
+          app-id: ${{ secrets.SKYRAMP_TESTBOT_APP_ID }}
+          private-key: ${{ secrets.SKYRAMP_TESTBOT_APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           fetch-depth: 0
-      - uses: skyramp/testbot@v0.10.4
+          token: ${{ steps.skyramp-testbot-app-token.outputs.token }}
+
+      - uses: skyramp/testbot@eb12da0e558fad795bfc9b39a60616de46efa853 # v0.10.4
         with:
           skyrampLicenseFile: ${{ secrets.SKYRAMP_LICENSE_FILE }}
-          anthropicApiKey: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropicApiKey: ${{ secrets.SKYRAMP_TESTBOT_API_KEY }}
+          githubToken: ${{ steps.skyramp-testbot-app-token.outputs.token }}
           targetSetupCommand: './deployment-testbot/setup.sh'
           targetReadyCheckCommand: 'curl -f http://localhost:2285/api/server/ping'
-          targetReadyCheckTimeout: 600
+          targetReadyCheckTimeout: '600'
           authTokenCommand: './deployment-testbot/get-token.sh'
-          autoCommit: true
-          postPrComment: true
+          postPrComment: 'true'
