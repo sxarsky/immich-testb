@@ -1,0 +1,164 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:36.828Z",
+    "Scheme": "http",
+    "scenarioName": "notification_create_unknown_recipient"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"title\":\"Skyramp recipient probe\",\"level\":\"info\"}",
+    "ResponseBody": "{\"id\":\"c2d108fc-65be-43ba-945c-278121236077\",\"createdAt\":\"2026-09-08T21:00:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp recipient probe\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:37.828Z",
+    "Scheme": "http",
+    "scenarioName": "notification_create_unknown_recipient"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications/c2d108fc-65be-43ba-945c-278121236077",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:38.828Z",
+    "Scheme": "http",
+    "scenarioName": "notification_create_unknown_recipient"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"3f5c8d21-9a4b-4e7c-8d16-5b2e9c7a4f83\",\"title\":\"Skyramp orphan recipient\"}",
+    "ResponseBody": "{\"message\":\"User not found\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:39.828Z",
+    "Scheme": "http",
+    "scenarioName": "notification_create_unknown_recipient"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"not-a-uuid\",\"title\":\"Skyramp malformed recipient\"}",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:40.828Z",
+    "Scheme": "http",
+    "scenarioName": "notification_create_unknown_recipient"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"title\":\"Skyramp missing recipient\"}",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:41.828Z",
+    "Scheme": "http",
+    "scenarioName": "notification_create_unknown_recipient"
+  }
+]

@@ -1,0 +1,234 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:11.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"title\":\"Skyramp anemone audit\",\"description\":\"generic body for the title match\",\"level\":\"info\"}",
+    "ResponseBody": "{\"id\":\"bcc96b7e-1713-4a92-9734-b1a0a23449b6\",\"createdAt\":\"2026-09-08T21:00:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp anemone audit\",\"description\":\"generic body for the title match\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:12.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"title\":\"Skyramp generic heading\",\"description\":\"basalt reminder in the description only\",\"level\":\"info\"}",
+    "ResponseBody": "{\"id\":\"36275143-368c-4017-8864-6b38641529f3\",\"createdAt\":\"2026-09-08T21:00:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp generic heading\",\"description\":\"basalt reminder in the description only\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:13.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"id\":\"bcc96b7e-1713-4a92-9734-b1a0a23449b6\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp anemone audit\",\"description\":\"generic body for the title match\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "anemone"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:14.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"id\":\"36275143-368c-4017-8864-6b38641529f3\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp generic heading\",\"description\":\"basalt reminder in the description only\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "basalt"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:15.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "zzznomatchzzz"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:16.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        ""
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:17.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"bcc96b7e-1713-4a92-9734-b1a0a23449b6\",\"36275143-368c-4017-8864-6b38641529f3\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:18.689Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  }
+]

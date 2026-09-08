@@ -39,6 +39,19 @@ describe(NotificationController.name, () => {
     });
   });
 
+  describe('GET /notifications/statistics', () => {
+    it('should be an authenticated route', async () => {
+      await request(ctx.getHttpServer()).get('/notifications/statistics');
+      expect(ctx.authenticate).toHaveBeenCalled();
+    });
+
+    it('should route to getStatistics and not to the :id route', async () => {
+      await request(ctx.getHttpServer()).get('/notifications/statistics');
+      expect(service.getStatistics).toHaveBeenCalled();
+      expect(service.get).not.toHaveBeenCalled();
+    });
+  });
+
   describe('PUT /notifications', () => {
     it('should be an authenticated route', async () => {
       await request(ctx.getHttpServer()).put('/notifications');

@@ -1,0 +1,191 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:26.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"6ecb082e-4c2a-4668-ab6d-0bd4091f9c13\",\"title\":\"Skyramp bulk cap probe\",\"level\":\"info\"}",
+    "ResponseBody": "{\"id\":\"e9f18106-7f45-4476-a303-02d05eb0ba3d\",\"createdAt\":\"2026-09-08T21:00:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp bulk cap probe\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:27.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"e9f18106-7f45-4476-a303-02d05eb0ba3d\"],\"readAt\":\"2026-09-08T21:00:00.000Z\"}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:28.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"9c1f2a54-7b0e-4d3a-8f61-2ab5c7d94e08\",\"9c1f2a54-7b0e-4d3a-8f61-2ab5c7d94e08\"],\"readAt\":\"2026-09-08T21:00:00.000Z\"}",
+    "ResponseBody": "{\"message\":\"Not found or no notification.update access\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:29.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"9c1f2a54-7b0e-4d3a-8f61-2ab5c7d94e08\",\"9c1f2a54-7b0e-4d3a-8f61-2ab5c7d94e08\",\"9c1f2a54-7b0e-4d3a-8f61-2ab5c7d94e08\"],\"readAt\":\"2026-09-08T21:00:00.000Z\"}",
+    "ResponseBody": "{\"message\":\"Cannot update more than 500 notifications at once\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:30.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"readAt\":\"2026-09-08T21:00:00.000Z\"}",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:31.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"e9f18106-7f45-4476-a303-02d05eb0ba3d\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:13:32.124Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_cap_500"
+  }
+]
