@@ -1380,7 +1380,15 @@ export type MemoryUpdateDto = {
 };
 export type NotificationDeleteAllDto = {
     /** Notification IDs to delete */
-    ids: string[];
+    ids?: string[];
+    /** Delete every notification the caller has already read */
+    read?: boolean;
+};
+export type NotificationStatisticsDto = {
+    /** Number of notifications */
+    total: number;
+    /** Number of unread notifications */
+    unread: number;
 };
 export type NotificationUpdateAllDto = {
     /** Notification IDs to update */
@@ -5115,9 +5123,10 @@ export function deleteNotifications({ notificationDeleteAllDto }: {
 /**
  * Retrieve notifications
  */
-export function getNotifications({ id, level, $type, unread }: {
+export function getNotifications({ id, level, search, $type, unread }: {
     id?: string;
     level?: NotificationLevel;
+    search?: string;
     $type?: NotificationType;
     unread?: boolean;
 }, opts?: Oazapfts.RequestOpts) {
@@ -5127,9 +5136,21 @@ export function getNotifications({ id, level, $type, unread }: {
     }>(`/notifications${QS.query(QS.explode({
         id,
         level,
+        search,
         "type": $type,
         unread
     }))}`, {
+        ...opts
+    }));
+}
+/**
+ * Retrieve notification statistics
+ */
+export function getNotificationStatistics(opts?: Oazapfts.RequestOpts) {
+    return oazapfts.ok(oazapfts.fetchJson<{
+        status: 200;
+        data: NotificationStatisticsDto;
+    }>("/notifications/statistics", {
         ...opts
     }));
 }

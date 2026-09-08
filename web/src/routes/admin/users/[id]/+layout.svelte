@@ -12,10 +12,18 @@
   import { locale } from '$lib/stores/preferences.store';
   import { createDateFormatter, findLocale } from '$lib/utils';
   import { getBytesWithUnit } from '$lib/utils/byte-units';
-  import { CalendarHeatmapType, getUserCalendarHeatmapAdmin, type UserAdminResponseDto } from '@immich/sdk';
+  import { handleError } from '$lib/utils/handle-error';
+  import {
+    CalendarHeatmapType,
+    createNotification,
+    getUserCalendarHeatmapAdmin,
+    NotificationLevel,
+    type UserAdminResponseDto,
+  } from '@immich/sdk';
   import {
     Alert,
     Badge,
+    Button,
     CardTitle,
     Code,
     CommandPaletteDefaultProvider,
@@ -24,9 +32,12 @@
     Heading,
     Icon,
     MenuItemType,
+    Field,
+    Input,
     Meter,
     Stack,
     Text,
+    toastManager,
   } from '@immich/ui';
   import {
     mdiAccountOutline,
@@ -37,6 +48,7 @@
     mdiCloudUploadOutline,
     mdiDevices,
     mdiFeatureSearchOutline,
+    mdiBellOutline,
     mdiPlayCircle,
     mdiTrashCanOutline,
   } from '@mdi/js';
@@ -83,6 +95,34 @@
   const onUserAdminDeleted = async ({ id }: { id: string }) => {
     if (id === user.id) {
       await goto(Route.users());
+    }
+  };
+
+  let notificationTitle = $state('');
+  let notificationDescription = $state('');
+  let notificationLevel = $state<NotificationLevel>(NotificationLevel.Info);
+  let isSendingNotification = $state(false);
+  const canSendNotification = $derived(notificationTitle.trim().length > 0 && !isSendingNotification);
+
+  const onSendNotification = async () => {
+    isSendingNotification = true;
+    try {
+      await createNotification({
+        notificationCreateDto: {
+          userId: user.id,
+          title: notificationTitle,
+          description: notificationDescription || undefined,
+          level: notificationLevel,
+        },
+      });
+      notificationTitle = '';
+      notificationDescription = '';
+      notificationLevel = NotificationLevel.Info;
+      toastManager.info($t('admin.notification_sent'));
+    } catch (error) {
+      handleError(error, $t('errors.unable_to_send_notification'));
+    } finally {
+      isSendingNotification = false;
     }
   };
 </script>
@@ -208,6 +248,39 @@
             {:else}
               <span class="text-dark">{$t('no_devices')}</span>
             {/each}
+          </Stack>
+        </AdminCard>
+
+        <AdminCard icon={mdiBellOutline} title={$t('admin.send_notification')}>
+          <Stack gap={3}>
+            <Field label={$t('title')}>
+              <Input bind:value={notificationTitle} data-testid="send-notification-title" />
+            </Field>
+            <Field label={$t('description')}>
+              <Input bind:value={notificationDescription} data-testid="send-notification-description" />
+            </Field>
+            <Field label={$t('level')}>
+              <select
+                bind:value={notificationLevel}
+                data-testid="send-notification-level"
+                aria-label={$t('level')}
+                class="w-full rounded-2xl border border-gray-300 bg-white px-3 py-2 text-sm dark:border-gray-600 dark:bg-immich-dark-gray"
+              >
+                <option value={NotificationLevel.Info}>{$t('info')}</option>
+                <option value={NotificationLevel.Success}>{$t('success')}</option>
+                <option value={NotificationLevel.Warning}>{$t('warning')}</option>
+                <option value={NotificationLevel.Error}>{$t('error')}</option>
+              </select>
+            </Field>
+            <div>
+              <Button
+                size="small"
+                color="primary"
+                disabled={!canSendNotification}
+                data-testid="send-notification-submit"
+                onclick={() => onSendNotification()}>{$t('send')}</Button
+              >
+            </div>
           </Stack>
         </AdminCard>
 
