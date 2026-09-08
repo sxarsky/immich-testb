@@ -1,0 +1,218 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:10.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"title\":\"Skyramp Bulk Limits\",\"description\":\"bulk limit probe\"}",
+    "ResponseBody": "{\"id\":\"e0f74b5b-80c6-4d92-b154-c26f3a8d0e97\",\"createdAt\":\"2026-09-08T21:30:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp Bulk Limits\",\"description\":\"bulk limit probe\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:11.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"e0f74b5b-80c6-4d92-b154-c26f3a8d0e97\"],\"readAt\":\"2026-09-08T21:00:00.000Z\"}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:12.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"5a2c1ca6-30ca-45b9-88c8-abc23e5062c4\",\"77806509-a02e-41ca-8092-9cbb203c479f\",\"2f7befe9-0309-413c-8007-a04f59d4e8ea\",\"8133fb9d-fa14-4606-8c9c-08d37bf71937\",\"6f076ef9-6964-4e41-8625-c3edfbf48200\",\"320bead6-e0f4-43ae-8a44-c36ede487065\",\"68671530-c13d-4b80-870c-feaa39121498\",\"6528615a-447e-4985-8ac2-699bb4bb0e9f\",\"6b06b5e1-bb06-49e6-8ae9-44d914f4ba3f\",\"d5662b40-1347-43de-8dbb-5531e7131329\",\"d47a957c-2c7e-48de-8ec0-858b4685ddb4\",\"0d6aec46-43ca-487c-80bf-eda8d4d4ae87\",\"e643db5b-1e4d-4d48-8496-0633f8745c6e\",\"5d675092-d70f-4337-80ed-5accdb39c3e1\",\"5d76dadf-c32d-4594-8a58-4e5d48db233e\",\"5a54f94e-f94e-4528-8689-5b6f3d5cebaa\",\"f1a42e84-87c7-43f2-86d8-b65ac027f77d\",\"572bda62-d44d-4714-83c2-57dc57921951\",\"329e91ce-1cec-4a33-859a-529f58b84b02\",\"45f4ebad-39f2-424d-8c9d-ba0a291e41f5\",\"76d7ada9-09a1-453b-8867-468b4c3df7a7\",\"75e0592f-f079-4bc9-8796-bef95177295b\",\"a0c64bed-7973-4c51-8905-65194c052c42\",\"5d7767c1-e032-4868-87e9-f090b3cb7a5c\",\"c03694cf-8e21-40c6-8d2a-cb649273099e\",\"690cece3-9645-40a3-8e69-b5ca83def0ac\",\"09ae32e8-5344-40a8-8124-37f8326a84a9\",\"0bca1986-2f23-4087-82d0-dc266dfe0a45\",\"1e864b84-34db-4683-8c16-5c44d06ba199\",\"d52d063f-9cb0-476a-8bc4-ae0ca374e70f\",\"67e57e89-409d-430e-8d5d-04bb6dbaa7d3\",\"90bf73bd-ab69-4a58-8219-35a81ef3e006\",\"4c7d6ea4-b352-48e5-8c44-9ba690f5a4b9\",\"f90a63e4-d4fe-48e9-89ab-ec22203fbe53\",\"83a9fe97-715f-417e-8437-e578f06a31da\",\"207f9658-09b8-4103-84aa-902c21fc6e8a\",\"d94549c2-6db6-43ee-8d15-156405ecf62c\",\"da3dcae5-194b-4d48-8721-a76e8829a048\",\"9b84221e-c072-457c-8122-8a7cfdb0bdb9\",\"0649a511-df14-4aed-86a5-fb4d96311b82\",\"5fcf5b4e-3598-48a5-8e1a-9256c8c6af9f\",\"d7188339-0055-4459-8be8-b6a81b7a0d37\",\"9437745a-71e3-4146-82fa-4a250ecc8b1a\",\"ada2beb9-6b8c-4f54-8ec4-352b5fad8762\",\"6e8ae1fb-60dd-4ce4-89d9-5e9a71dafaa9\",\"3cd6f21a-5a4e-4ae9-8966-5bd62f95c7f0\",\"d9932b7c-918b-496b-8762-25bf0c30a02e\",\"da602e9f-22d8-4e07-86bf-f0885876518a\",\"fca191e6-eb1d-4cc8-87f5-8e18f2ff324d\",\"7c76b6c6-32fb-43ca-8486-af69e5d87c3e\",\"8ff9b953-90ac-4853-820d-5ae92e3f604d\",\"46e7b4d5-3451-439a-8c8b-a4b8546defb8\",\"75d1f320-b148-4fc7-87fa-ca352f1829e9\",\"6aee5355-3ddf-419a-8c3e-b01cf6458a86\",\"ec1581ed-4d67-4afd-8f9a-e7821d972656\",\"79257d68-114e-4fd2-8d8a-4e18d85266fb\",\"219d82bc-a060-4c9a-8c90-06921bd3b33c\",\"e19690fa-215f-4b66-8851-e9082c1dd00f\",\"4fa79650-67c4-44e4-85e3-e1d81d7d705f\",\"96d91443-47f6-4b7b-82f3-03db0b56a87c\",\"ff8dbf89-0d0b-45b2-89dd-9f76a96dbab3\",\"04750960-9b89-4ee3-8505-c1e0081338e0\",\"dc0e3cd2-528e-46b5-8446-7f6fa612497f\",\"49add80a-04d2-41e3-86b2-3b0353e71ff5\",\"d042f98a-185d-4f50-8b68-679055ebe654\",\"c305bb5e-24b8-456a-8cd0-88616a4b23b5\",\"b5be310b-9ddc-47ac-81c9-92888b4ed9d3\",\"2aec42df-5e2d-4e85-8405-dc76a4369c41\",\"cd3c44b1-9818-4cec-8dec-53d141d900fb\",\"65587f30-754c-4de7-84a4-b4bd8918ad87\",\"278e04ea-d9a2-4922-8be4-d7e42cca1a0b\",\"a795b860-2b99-4668-815d-5efff866f11c\",\"9eb84fa3-1351-4e86-8b8d-7301b3bc18a4\",\"a3abb8f9-4314-4ef8-8d97-1689e2350d72\",\"5b19303d-f84f-41ed-899a-69151f62105a\",\"41b647f8-61c5-4860-8750-4b5ea3ccbbed\",\"b15d84a4-d791-43df-8eab-cbcefb64f112\",\"1205987c-0639-492b-8df4-654e2f4410c8\",\"b8c9fe1f-0581-4d12-8e08-22802cb3d476\",\"78317636-5bd1-4943-8a1f-e0aab9753c45\",\"914f8e5f-8a4b-4ded-8d89-08feddfa9140\",\"b6b2b3c2-399d-426e-8043-10c6ae192d42\",\"eb86ca8d-51a5-4878-8f3f-339d3f04eded\",\"30e8dba1-4dd5-4fee-894f-e9bda4746927\",\"c3b645df-6e13-4daa-870a-b9849121ddf3\",\"dce3b8c9-4687-41c0-8412-330ae3544a2f\",\"c2d4e1ed-398d-4411-8a1f-b9c696c8f55a\",\"9b96a5ce-7a3e-40b9-88e6-6fc4a56c6802\",\"17054d35-9970-4b10-852d-49f0b52451af\",\"39fbc7c7-44e8-4d2d-82ba-3c3628f5bb8d\",\"a709571c-97ad-4552-88cc-14982bac2b45\",\"26043c2a-75b0-41f1-8657-702a044d8f6b\",\"10c7ea3f-f5bf-4c94-82a1-fcce845be68a\",\"99348f5b-b403-476f-807d-8f76268d638c\",\"3e76deaf-a2e7-42e3-820f-7506fadb96b4\",\"316c621f-f1af-4bd4-82c7-2425232fb195\",\"0c02b810-8c37-4733-84d4-939c38deecc9\",\"85b06a37-9cf2-4e9b-8692-9a591c38df40\",\"24df6908-2d82-4a08-8a65-774074b60d01\",\"6c7a9eaa-1dad-4c0f-84bd-2c9ee9488c97\",\"f66d608e-7e17-4f20-8e75-0e1622166c41\"],\"readAt\":null}",
+    "ResponseBody": "{\"message\":\"Cannot update more than 100 notifications at once\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:13.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"5a2c1ca6-30ca-45b9-88c8-abc23e5062c4\",\"77806509-a02e-41ca-8092-9cbb203c479f\",\"2f7befe9-0309-413c-8007-a04f59d4e8ea\",\"8133fb9d-fa14-4606-8c9c-08d37bf71937\",\"6f076ef9-6964-4e41-8625-c3edfbf48200\",\"320bead6-e0f4-43ae-8a44-c36ede487065\",\"68671530-c13d-4b80-870c-feaa39121498\",\"6528615a-447e-4985-8ac2-699bb4bb0e9f\",\"6b06b5e1-bb06-49e6-8ae9-44d914f4ba3f\",\"d5662b40-1347-43de-8dbb-5531e7131329\",\"d47a957c-2c7e-48de-8ec0-858b4685ddb4\",\"0d6aec46-43ca-487c-80bf-eda8d4d4ae87\",\"e643db5b-1e4d-4d48-8496-0633f8745c6e\",\"5d675092-d70f-4337-80ed-5accdb39c3e1\",\"5d76dadf-c32d-4594-8a58-4e5d48db233e\",\"5a54f94e-f94e-4528-8689-5b6f3d5cebaa\",\"f1a42e84-87c7-43f2-86d8-b65ac027f77d\",\"572bda62-d44d-4714-83c2-57dc57921951\",\"329e91ce-1cec-4a33-859a-529f58b84b02\",\"45f4ebad-39f2-424d-8c9d-ba0a291e41f5\",\"76d7ada9-09a1-453b-8867-468b4c3df7a7\",\"75e0592f-f079-4bc9-8796-bef95177295b\",\"a0c64bed-7973-4c51-8905-65194c052c42\",\"5d7767c1-e032-4868-87e9-f090b3cb7a5c\",\"c03694cf-8e21-40c6-8d2a-cb649273099e\",\"690cece3-9645-40a3-8e69-b5ca83def0ac\",\"09ae32e8-5344-40a8-8124-37f8326a84a9\",\"0bca1986-2f23-4087-82d0-dc266dfe0a45\",\"1e864b84-34db-4683-8c16-5c44d06ba199\",\"d52d063f-9cb0-476a-8bc4-ae0ca374e70f\",\"67e57e89-409d-430e-8d5d-04bb6dbaa7d3\",\"90bf73bd-ab69-4a58-8219-35a81ef3e006\",\"4c7d6ea4-b352-48e5-8c44-9ba690f5a4b9\",\"f90a63e4-d4fe-48e9-89ab-ec22203fbe53\",\"83a9fe97-715f-417e-8437-e578f06a31da\",\"207f9658-09b8-4103-84aa-902c21fc6e8a\",\"d94549c2-6db6-43ee-8d15-156405ecf62c\",\"da3dcae5-194b-4d48-8721-a76e8829a048\",\"9b84221e-c072-457c-8122-8a7cfdb0bdb9\",\"0649a511-df14-4aed-86a5-fb4d96311b82\",\"5fcf5b4e-3598-48a5-8e1a-9256c8c6af9f\",\"d7188339-0055-4459-8be8-b6a81b7a0d37\",\"9437745a-71e3-4146-82fa-4a250ecc8b1a\",\"ada2beb9-6b8c-4f54-8ec4-352b5fad8762\",\"6e8ae1fb-60dd-4ce4-89d9-5e9a71dafaa9\",\"3cd6f21a-5a4e-4ae9-8966-5bd62f95c7f0\",\"d9932b7c-918b-496b-8762-25bf0c30a02e\",\"da602e9f-22d8-4e07-86bf-f0885876518a\",\"fca191e6-eb1d-4cc8-87f5-8e18f2ff324d\",\"7c76b6c6-32fb-43ca-8486-af69e5d87c3e\",\"8ff9b953-90ac-4853-820d-5ae92e3f604d\",\"46e7b4d5-3451-439a-8c8b-a4b8546defb8\",\"75d1f320-b148-4fc7-87fa-ca352f1829e9\",\"6aee5355-3ddf-419a-8c3e-b01cf6458a86\",\"ec1581ed-4d67-4afd-8f9a-e7821d972656\",\"79257d68-114e-4fd2-8d8a-4e18d85266fb\",\"219d82bc-a060-4c9a-8c90-06921bd3b33c\",\"e19690fa-215f-4b66-8851-e9082c1dd00f\",\"4fa79650-67c4-44e4-85e3-e1d81d7d705f\",\"96d91443-47f6-4b7b-82f3-03db0b56a87c\",\"ff8dbf89-0d0b-45b2-89dd-9f76a96dbab3\",\"04750960-9b89-4ee3-8505-c1e0081338e0\",\"dc0e3cd2-528e-46b5-8446-7f6fa612497f\",\"49add80a-04d2-41e3-86b2-3b0353e71ff5\",\"d042f98a-185d-4f50-8b68-679055ebe654\",\"c305bb5e-24b8-456a-8cd0-88616a4b23b5\",\"b5be310b-9ddc-47ac-81c9-92888b4ed9d3\",\"2aec42df-5e2d-4e85-8405-dc76a4369c41\",\"cd3c44b1-9818-4cec-8dec-53d141d900fb\",\"65587f30-754c-4de7-84a4-b4bd8918ad87\",\"278e04ea-d9a2-4922-8be4-d7e42cca1a0b\",\"a795b860-2b99-4668-815d-5efff866f11c\",\"9eb84fa3-1351-4e86-8b8d-7301b3bc18a4\",\"a3abb8f9-4314-4ef8-8d97-1689e2350d72\",\"5b19303d-f84f-41ed-899a-69151f62105a\",\"41b647f8-61c5-4860-8750-4b5ea3ccbbed\",\"b15d84a4-d791-43df-8eab-cbcefb64f112\",\"1205987c-0639-492b-8df4-654e2f4410c8\",\"b8c9fe1f-0581-4d12-8e08-22802cb3d476\",\"78317636-5bd1-4943-8a1f-e0aab9753c45\",\"914f8e5f-8a4b-4ded-8d89-08feddfa9140\",\"b6b2b3c2-399d-426e-8043-10c6ae192d42\",\"eb86ca8d-51a5-4878-8f3f-339d3f04eded\",\"30e8dba1-4dd5-4fee-894f-e9bda4746927\",\"c3b645df-6e13-4daa-870a-b9849121ddf3\",\"dce3b8c9-4687-41c0-8412-330ae3544a2f\",\"c2d4e1ed-398d-4411-8a1f-b9c696c8f55a\",\"9b96a5ce-7a3e-40b9-88e6-6fc4a56c6802\",\"17054d35-9970-4b10-852d-49f0b52451af\",\"39fbc7c7-44e8-4d2d-82ba-3c3628f5bb8d\",\"a709571c-97ad-4552-88cc-14982bac2b45\",\"26043c2a-75b0-41f1-8657-702a044d8f6b\",\"10c7ea3f-f5bf-4c94-82a1-fcce845be68a\",\"99348f5b-b403-476f-807d-8f76268d638c\",\"3e76deaf-a2e7-42e3-820f-7506fadb96b4\",\"316c621f-f1af-4bd4-82c7-2425232fb195\",\"0c02b810-8c37-4733-84d4-939c38deecc9\",\"85b06a37-9cf2-4e9b-8692-9a591c38df40\",\"24df6908-2d82-4a08-8a65-774074b60d01\",\"6c7a9eaa-1dad-4c0f-84bd-2c9ee9488c97\",\"f66d608e-7e17-4f20-8e75-0e1622166c41\"]}",
+    "ResponseBody": "{\"message\":\"Cannot delete more than 100 notifications at once\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:14.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"message\":\"Send either a list of ids or read\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:15.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"e0f74b5b-80c6-4d92-b154-c26f3a8d0e97\"],\"read\":true}",
+    "ResponseBody": "{\"message\":\"Send either a list of ids or read, not both\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:16.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"read\":true}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:17.825Z",
+    "Scheme": "http",
+    "scenarioName": "notification_bulk_limits_and_delete_body_rules"
+  }
+]

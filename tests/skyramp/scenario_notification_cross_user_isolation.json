@@ -1,0 +1,302 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:43.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"email\":\"skyramp.isolation.b@immich.test\",\"password\":\"Isolation-Pass-123\",\"name\":\"Isolation B\"}",
+    "ResponseBody": "{\"id\":\"f1a85c6c-91d7-4ea3-8265-d37e4b9e1fa8\",\"email\":\"skyramp.isolation.b@immich.test\",\"name\":\"Isolation B\",\"isAdmin\":false}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:44.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation",
+    "UniqueFields": [
+      "email"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"f1a85c6c-91d7-4ea3-8265-d37e4b9e1fa8\",\"title\":\"Skyramp Foreign Notice\"}",
+    "ResponseBody": "{\"id\":\"a2b96d7d-a2e8-4fb4-9376-e48f5cafab19\",\"createdAt\":\"2026-09-08T21:30:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp Foreign Notice\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:45.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"title\":\"Skyramp Own Notice\"}",
+    "ResponseBody": "{\"id\":\"b3ca7e8e-b3f9-40c5-a487-f590adbabc2a\",\"createdAt\":\"2026-09-08T21:30:05.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp Own Notice\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:46.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"total\":1,\"unread\":1}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/statistics",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:47.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"title\":\"Skyramp Own Notice\",\"level\":\"info\",\"type\":\"Custom\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:48.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Not found or no notification.read access\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/a2b96d7d-a2e8-4fb4-9376-e48f5cafab19",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:49.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"readAt\":\"2026-09-08T21:00:00.000Z\"}",
+    "ResponseBody": "{\"message\":\"Not found or no notification.update access\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications/a2b96d7d-a2e8-4fb4-9376-e48f5cafab19",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:50.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Not found or no notification.delete access\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications/a2b96d7d-a2e8-4fb4-9376-e48f5cafab19",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:51.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"b3ca7e8e-b3f9-40c5-a487-f590adbabc2a\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:52.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"force\":true}",
+    "ResponseBody": "{\"id\":\"f1a85c6c-91d7-4ea3-8265-d37e4b9e1fa8\",\"email\":\"skyramp.isolation.b@immich.test\",\"name\":\"Isolation B\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/admin/users/f1a85c6c-91d7-4ea3-8265-d37e4b9e1fa8",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:28:53.025Z",
+    "Scheme": "http",
+    "scenarioName": "notification_cross_user_isolation"
+  }
+]

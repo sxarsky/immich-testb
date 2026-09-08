@@ -1,0 +1,265 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:46.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"title\":\"Skyramp Search Alpha\",\"description\":\"nightly archive job completed\"}",
+    "ResponseBody": "{\"id\":\"c8d52f39-6ea4-4b70-9f32-a04d1e6b8c75\",\"createdAt\":\"2026-09-08T21:30:00.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp Search Alpha\",\"description\":\"nightly archive job completed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:47.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"1293a3b5-2b75-4f56-9dac-244b2996cf86\",\"title\":\"Skyramp Search Beta\",\"description\":\"library scan aborted early\"}",
+    "ResponseBody": "{\"id\":\"d9e63a4a-7fb5-4c81-a043-b15e2f7c9d86\",\"createdAt\":\"2026-09-08T21:30:05.000Z\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Skyramp Search Beta\",\"description\":\"library scan aborted early\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:48.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"title\":\"Skyramp Search Alpha\",\"description\":\"nightly archive job completed\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "Alpha"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:49.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"title\":\"Skyramp Search Alpha\",\"description\":\"nightly archive job completed\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "archive"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:50.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "NoSuchTermXyz"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:51.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        ""
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:52.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:53.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"c8d52f39-6ea4-4b70-9f32-a04d1e6b8c75\",\"d9e63a4a-7fb5-4c81-a043-b15e2f7c9d86\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:26:54.705Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filters_title_and_description"
+  }
+]
