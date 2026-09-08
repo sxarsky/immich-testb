@@ -41,14 +41,22 @@ const NotificationSearchSchema = z
     level: NotificationLevelSchema.optional(),
     type: NotificationTypeSchema.optional(),
     unread: stringToBool.optional().describe('Filter by unread status'),
+    search: z.string().trim().min(1).max(255).optional().describe('Filter by text in the title or description'),
   })
   .meta({ id: 'NotificationSearchDto' });
+
+const NotificationStatisticsSchema = z
+  .object({
+    total: z.number().int().describe('Number of notifications'),
+    unread: z.number().int().describe('Number of unread notifications'),
+  })
+  .meta({ id: 'NotificationStatisticsDto' });
 
 const NotificationCreateSchema = z
   .object({
     level: NotificationLevelSchema.optional(),
     type: NotificationTypeSchema.optional(),
-    title: z.string().describe('Notification title'),
+    title: z.string().trim().min(1).max(255).describe('Notification title'),
     description: z.string().nullish().describe('Notification description'),
     data: z.record(z.string(), z.unknown()).optional().describe('Additional notification data'),
     readAt: isoDatetimeToDate.nullish().describe('Date when notification was read'),
@@ -71,7 +79,8 @@ const NotificationUpdateAllSchema = z
 
 const NotificationDeleteAllSchema = z
   .object({
-    ids: z.array(z.uuidv4()).min(1).describe('Notification IDs to delete'),
+    ids: z.array(z.uuidv4()).min(1).optional().describe('Notification IDs to delete'),
+    read: z.boolean().optional().describe('Delete every notification the caller has already read'),
   })
   .meta({ id: 'NotificationDeleteAllDto' });
 
@@ -80,6 +89,7 @@ export class TemplateResponseDto extends createZodDto(TemplateResponseSchema) {}
 export class TemplateDto extends createZodDto(TemplateSchema) {}
 export class NotificationDto extends createZodDto(NotificationSchema) {}
 export class NotificationSearchDto extends createZodDto(NotificationSearchSchema) {}
+export class NotificationStatisticsDto extends createZodDto(NotificationStatisticsSchema) {}
 export class NotificationCreateDto extends createZodDto(NotificationCreateSchema) {}
 export class NotificationUpdateDto extends createZodDto(NotificationUpdateSchema) {}
 export class NotificationUpdateAllDto extends createZodDto(NotificationUpdateAllSchema) {}

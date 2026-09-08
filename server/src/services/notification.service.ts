@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { OnEvent, OnJob } from 'src/decorators';
 import { MapAlbumDto } from 'src/dtos/album.dto';
 import { mapAsset } from 'src/dtos/asset-response.dto';
@@ -8,6 +8,7 @@ import {
   NotificationDeleteAllDto,
   NotificationDto,
   NotificationSearchDto,
+  NotificationStatisticsDto,
   NotificationUpdateAllDto,
   NotificationUpdateDto,
 } from 'src/dtos/notification.dto';
@@ -33,13 +34,22 @@ import { getPreferences } from 'src/utils/preferences';
 @Injectable()
 export class NotificationService extends BaseService {
   private static albumUpdateEmailDelayMs = 300_000;
+  private static bulkIdLimit = 100;
 
   async search(auth: AuthDto, dto: NotificationSearchDto): Promise<NotificationDto[]> {
     const items = await this.notificationRepository.search(auth.user.id, dto);
     return items.map((item) => mapNotification(item));
   }
 
+  async getStatistics(auth: AuthDto): Promise<NotificationStatisticsDto> {
+    return this.notificationRepository.statistics(auth.user.id);
+  }
+
   async updateAll(auth: AuthDto, dto: NotificationUpdateAllDto) {
+    if (dto.ids.length > NotificationService.bulkIdLimit) {
+      throw new BadRequestException(`Cannot update more than ${NotificationService.bulkIdLimit} notifications at once`);
+    }
+
     await this.requireAccess({ auth, ids: dto.ids, permission: Permission.NotificationUpdate });
     await this.notificationRepository.updateAll(dto.ids, {
       readAt: dto.readAt,
@@ -47,16 +57,35 @@ export class NotificationService extends BaseService {
   }
 
   async deleteAll(auth: AuthDto, dto: NotificationDeleteAllDto) {
-    await this.requireAccess({ auth, ids: dto.ids, permission: Permission.NotificationDelete });
+    if (dto.ids && dto.read) {
+      throw new BadRequestException('Send either a list of ids or read, not both');
+    }
+
+    if (dto.read) {
+      await this.notificationRepository.deleteAllRead(auth.user.id);
+      return;
+    }
+
+    if (!dto.ids) {
+      throw new BadRequestException('Send either a list of ids or read');
+    }
+
+    if (dto.ids.length > NotificationService.bulkIdLimit) {
+      throw new BadRequestException(`Cannot delete more than ${NotificationService.bulkIdLimit} notifications at once`);
+    }
+
     await this.notificationRepository.deleteAll(dto.ids);
   }
 
   async get(auth: AuthDto, id: string) {
-    await this.requireAccess({ auth, ids: [id], permission: Permission.NotificationRead });
+    // Look the notification up first, so an id that matches nothing answers 404
+    // instead of the access check's 400.
     const item = await this.notificationRepository.get(id);
     if (!item) {
-      throw new BadRequestException('Notification not found');
+      throw new NotFoundException('Notification not found');
     }
+
+    await this.requireAccess({ auth, ids: [id], permission: Permission.NotificationRead });
     return mapNotification(item);
   }
 
