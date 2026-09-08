@@ -1,0 +1,221 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"aaaaaaa1-1a2b-4c3d-8e4f-0a0000000001\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:35.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"email\":\"skyramp-boundary@immich.test\",\"password\":\"Skyramp#Pass123\",\"name\":\"Skyramp Boundary User\"}",
+    "ResponseBody": "{\"id\":\"aaaaaaa2-1a2b-4c3d-8e4f-0a0000000002\",\"email\":\"skyramp-boundary@immich.test\",\"name\":\"Skyramp Boundary User\",\"isAdmin\":false}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/users",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:36.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user",
+    "UniqueFields": [
+      "email"
+    ]
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"aaaaaaa2-1a2b-4c3d-8e4f-0a0000000002\",\"title\":\"Foreign Notice\"}",
+    "ResponseBody": "{\"id\":\"bbbbbbb1-1a2b-4c3d-8e4f-0b0000000011\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Foreign Notice\",\"createdAt\":\"2026-09-08T21:30:00.000Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:37.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Not found or no notification.read access\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/bbbbbbb1-1a2b-4c3d-8e4f-0b0000000011",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:38.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"aaaaaaa1-1a2b-4c3d-8e4f-0a0000000001\",\"title\":\"Own Notice\"}",
+    "ResponseBody": "{\"id\":\"bbbbbbb2-1a2b-4c3d-8e4f-0b0000000012\",\"level\":\"info\",\"type\":\"Custom\",\"title\":\"Own Notice\",\"createdAt\":\"2026-09-08T21:30:01.000Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:39.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"bbbbbbb2-1a2b-4c3d-8e4f-0b0000000012\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:40.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"bbbbbbb1-1a2b-4c3d-8e4f-0b0000000011\"]}",
+    "ResponseBody": "{\"message\":\"Not found or no notification.delete access\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:41.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"force\":true}",
+    "ResponseBody": "{\"id\":\"aaaaaaa2-1a2b-4c3d-8e4f-0a0000000002\",\"email\":\"skyramp-boundary@immich.test\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/admin/users/aaaaaaa2-1a2b-4c3d-8e4f-0a0000000002",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:33:42.050Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_bulk_delete_cross_user"
+  }
+]

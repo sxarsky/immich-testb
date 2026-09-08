@@ -1,13 +1,12 @@
 # Skyramp Workspace Configuration
 workspace:
-  repoName: pellepedro-testbot/immich-testb
-  repoUrl: https://github.com/pellepedro-testbot/immich-testb
+  repoName: sxarsky/immich-testb
+  repoUrl: https://github.com/sxarsky/immich-testb
 metadata:
   schemaVersion: v1
-  mcpVersion: 0.0.64
-  executorVersion: v1.3.27
-  createdAt: "2026-06-13T12:54:53.291Z"
-  updatedAt: "2026-06-13T12:54:53.298Z"
+  executorVersion: v1.3.44
+  createdAt: "2026-09-08T21:41:10.706Z"
+  updatedAt: "2026-09-08T21:41:10.710Z"
 services:
   - serviceName: immich-testb-server
     language: python
@@ -21,4 +20,4 @@ services:
     runtimeDetails:
       serverStartCommand: docker compose -f deployment-testbot/docker-compose.yml up -d --build
       runtime: docker
-      dockerNetwork: deployment-testbot_default
+      dockerNetwork: immich-testbot_default

@@ -1,0 +1,249 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"aaaaaaa1-1a2b-4c3d-8e4f-0a0000000001\",\"email\":\"admin@immich.test\",\"name\":\"Admin\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:02.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"11111111-2222-4333-8444-555555555555\",\"title\":\"Ghost Recipient\"}",
+    "ResponseBody": "{\"message\":\"User not found\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:03.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"aaaaaaa1-1a2b-4c3d-8e4f-0a0000000001\",\"title\":\"   \"}",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:04.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"aaaaaaa1-1a2b-4c3d-8e4f-0a0000000001\"}",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:05.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        ""
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:06.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"00000001-1a2b-4c3d-8e4f-0b0000000001\",\"00000002-1a2b-4c3d-8e4f-0b0000000002\",\"00000003-1a2b-4c3d-8e4f-0b0000000003\",\"00000004-1a2b-4c3d-8e4f-0b0000000004\",\"00000005-1a2b-4c3d-8e4f-0b0000000005\",\"00000006-1a2b-4c3d-8e4f-0b0000000006\",\"00000007-1a2b-4c3d-8e4f-0b0000000007\",\"00000008-1a2b-4c3d-8e4f-0b0000000008\",\"00000009-1a2b-4c3d-8e4f-0b0000000009\",\"0000000a-1a2b-4c3d-8e4f-0b000000000a\",\"0000000b-1a2b-4c3d-8e4f-0b000000000b\",\"0000000c-1a2b-4c3d-8e4f-0b000000000c\",\"0000000d-1a2b-4c3d-8e4f-0b000000000d\",\"0000000e-1a2b-4c3d-8e4f-0b000000000e\",\"0000000f-1a2b-4c3d-8e4f-0b000000000f\",\"00000010-1a2b-4c3d-8e4f-0b0000000010\",\"00000011-1a2b-4c3d-8e4f-0b0000000011\",\"00000012-1a2b-4c3d-8e4f-0b0000000012\",\"00000013-1a2b-4c3d-8e4f-0b0000000013\",\"00000014-1a2b-4c3d-8e4f-0b0000000014\",\"00000015-1a2b-4c3d-8e4f-0b0000000015\",\"00000016-1a2b-4c3d-8e4f-0b0000000016\",\"00000017-1a2b-4c3d-8e4f-0b0000000017\",\"00000018-1a2b-4c3d-8e4f-0b0000000018\",\"00000019-1a2b-4c3d-8e4f-0b0000000019\",\"0000001a-1a2b-4c3d-8e4f-0b000000001a\",\"0000001b-1a2b-4c3d-8e4f-0b000000001b\",\"0000001c-1a2b-4c3d-8e4f-0b000000001c\",\"0000001d-1a2b-4c3d-8e4f-0b000000001d\",\"0000001e-1a2b-4c3d-8e4f-0b000000001e\",\"0000001f-1a2b-4c3d-8e4f-0b000000001f\",\"00000020-1a2b-4c3d-8e4f-0b0000000020\",\"00000021-1a2b-4c3d-8e4f-0b0000000021\",\"00000022-1a2b-4c3d-8e4f-0b0000000022\",\"00000023-1a2b-4c3d-8e4f-0b0000000023\",\"00000024-1a2b-4c3d-8e4f-0b0000000024\",\"00000025-1a2b-4c3d-8e4f-0b0000000025\",\"00000026-1a2b-4c3d-8e4f-0b0000000026\",\"00000027-1a2b-4c3d-8e4f-0b0000000027\",\"00000028-1a2b-4c3d-8e4f-0b0000000028\",\"00000029-1a2b-4c3d-8e4f-0b0000000029\",\"0000002a-1a2b-4c3d-8e4f-0b000000002a\",\"0000002b-1a2b-4c3d-8e4f-0b000000002b\",\"0000002c-1a2b-4c3d-8e4f-0b000000002c\",\"0000002d-1a2b-4c3d-8e4f-0b000000002d\",\"0000002e-1a2b-4c3d-8e4f-0b000000002e\",\"0000002f-1a2b-4c3d-8e4f-0b000000002f\",\"00000030-1a2b-4c3d-8e4f-0b0000000030\",\"00000031-1a2b-4c3d-8e4f-0b0000000031\",\"00000032-1a2b-4c3d-8e4f-0b0000000032\",\"00000033-1a2b-4c3d-8e4f-0b0000000033\",\"00000034-1a2b-4c3d-8e4f-0b0000000034\",\"00000035-1a2b-4c3d-8e4f-0b0000000035\",\"00000036-1a2b-4c3d-8e4f-0b0000000036\",\"00000037-1a2b-4c3d-8e4f-0b0000000037\",\"00000038-1a2b-4c3d-8e4f-0b0000000038\",\"00000039-1a2b-4c3d-8e4f-0b0000000039\",\"0000003a-1a2b-4c3d-8e4f-0b000000003a\",\"0000003b-1a2b-4c3d-8e4f-0b000000003b\",\"0000003c-1a2b-4c3d-8e4f-0b000000003c\",\"0000003d-1a2b-4c3d-8e4f-0b000000003d\",\"0000003e-1a2b-4c3d-8e4f-0b000000003e\",\"0000003f-1a2b-4c3d-8e4f-0b000000003f\",\"00000040-1a2b-4c3d-8e4f-0b0000000040\",\"00000041-1a2b-4c3d-8e4f-0b0000000041\",\"00000042-1a2b-4c3d-8e4f-0b0000000042\",\"00000043-1a2b-4c3d-8e4f-0b0000000043\",\"00000044-1a2b-4c3d-8e4f-0b0000000044\",\"00000045-1a2b-4c3d-8e4f-0b0000000045\",\"00000046-1a2b-4c3d-8e4f-0b0000000046\",\"00000047-1a2b-4c3d-8e4f-0b0000000047\",\"00000048-1a2b-4c3d-8e4f-0b0000000048\",\"00000049-1a2b-4c3d-8e4f-0b0000000049\",\"0000004a-1a2b-4c3d-8e4f-0b000000004a\",\"0000004b-1a2b-4c3d-8e4f-0b000000004b\",\"0000004c-1a2b-4c3d-8e4f-0b000000004c\",\"0000004d-1a2b-4c3d-8e4f-0b000000004d\",\"0000004e-1a2b-4c3d-8e4f-0b000000004e\",\"0000004f-1a2b-4c3d-8e4f-0b000000004f\",\"00000050-1a2b-4c3d-8e4f-0b0000000050\",\"00000051-1a2b-4c3d-8e4f-0b0000000051\",\"00000052-1a2b-4c3d-8e4f-0b0000000052\",\"00000053-1a2b-4c3d-8e4f-0b0000000053\",\"00000054-1a2b-4c3d-8e4f-0b0000000054\",\"00000055-1a2b-4c3d-8e4f-0b0000000055\",\"00000056-1a2b-4c3d-8e4f-0b0000000056\",\"00000057-1a2b-4c3d-8e4f-0b0000000057\",\"00000058-1a2b-4c3d-8e4f-0b0000000058\",\"00000059-1a2b-4c3d-8e4f-0b0000000059\",\"0000005a-1a2b-4c3d-8e4f-0b000000005a\",\"0000005b-1a2b-4c3d-8e4f-0b000000005b\",\"0000005c-1a2b-4c3d-8e4f-0b000000005c\",\"0000005d-1a2b-4c3d-8e4f-0b000000005d\",\"0000005e-1a2b-4c3d-8e4f-0b000000005e\",\"0000005f-1a2b-4c3d-8e4f-0b000000005f\",\"00000060-1a2b-4c3d-8e4f-0b0000000060\",\"00000061-1a2b-4c3d-8e4f-0b0000000061\",\"00000062-1a2b-4c3d-8e4f-0b0000000062\",\"00000063-1a2b-4c3d-8e4f-0b0000000063\",\"00000064-1a2b-4c3d-8e4f-0b0000000064\",\"00000065-1a2b-4c3d-8e4f-0b0000000065\"],\"readAt\":\"2026-09-08T12:00:00.000Z\"}",
+    "ResponseBody": "{\"message\":\"Cannot update more than 100 notifications at once\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:07.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"00000001-1a2b-4c3d-8e4f-0b0000000001\",\"00000002-1a2b-4c3d-8e4f-0b0000000002\",\"00000003-1a2b-4c3d-8e4f-0b0000000003\",\"00000004-1a2b-4c3d-8e4f-0b0000000004\",\"00000005-1a2b-4c3d-8e4f-0b0000000005\",\"00000006-1a2b-4c3d-8e4f-0b0000000006\",\"00000007-1a2b-4c3d-8e4f-0b0000000007\",\"00000008-1a2b-4c3d-8e4f-0b0000000008\",\"00000009-1a2b-4c3d-8e4f-0b0000000009\",\"0000000a-1a2b-4c3d-8e4f-0b000000000a\",\"0000000b-1a2b-4c3d-8e4f-0b000000000b\",\"0000000c-1a2b-4c3d-8e4f-0b000000000c\",\"0000000d-1a2b-4c3d-8e4f-0b000000000d\",\"0000000e-1a2b-4c3d-8e4f-0b000000000e\",\"0000000f-1a2b-4c3d-8e4f-0b000000000f\",\"00000010-1a2b-4c3d-8e4f-0b0000000010\",\"00000011-1a2b-4c3d-8e4f-0b0000000011\",\"00000012-1a2b-4c3d-8e4f-0b0000000012\",\"00000013-1a2b-4c3d-8e4f-0b0000000013\",\"00000014-1a2b-4c3d-8e4f-0b0000000014\",\"00000015-1a2b-4c3d-8e4f-0b0000000015\",\"00000016-1a2b-4c3d-8e4f-0b0000000016\",\"00000017-1a2b-4c3d-8e4f-0b0000000017\",\"00000018-1a2b-4c3d-8e4f-0b0000000018\",\"00000019-1a2b-4c3d-8e4f-0b0000000019\",\"0000001a-1a2b-4c3d-8e4f-0b000000001a\",\"0000001b-1a2b-4c3d-8e4f-0b000000001b\",\"0000001c-1a2b-4c3d-8e4f-0b000000001c\",\"0000001d-1a2b-4c3d-8e4f-0b000000001d\",\"0000001e-1a2b-4c3d-8e4f-0b000000001e\",\"0000001f-1a2b-4c3d-8e4f-0b000000001f\",\"00000020-1a2b-4c3d-8e4f-0b0000000020\",\"00000021-1a2b-4c3d-8e4f-0b0000000021\",\"00000022-1a2b-4c3d-8e4f-0b0000000022\",\"00000023-1a2b-4c3d-8e4f-0b0000000023\",\"00000024-1a2b-4c3d-8e4f-0b0000000024\",\"00000025-1a2b-4c3d-8e4f-0b0000000025\",\"00000026-1a2b-4c3d-8e4f-0b0000000026\",\"00000027-1a2b-4c3d-8e4f-0b0000000027\",\"00000028-1a2b-4c3d-8e4f-0b0000000028\",\"00000029-1a2b-4c3d-8e4f-0b0000000029\",\"0000002a-1a2b-4c3d-8e4f-0b000000002a\",\"0000002b-1a2b-4c3d-8e4f-0b000000002b\",\"0000002c-1a2b-4c3d-8e4f-0b000000002c\",\"0000002d-1a2b-4c3d-8e4f-0b000000002d\",\"0000002e-1a2b-4c3d-8e4f-0b000000002e\",\"0000002f-1a2b-4c3d-8e4f-0b000000002f\",\"00000030-1a2b-4c3d-8e4f-0b0000000030\",\"00000031-1a2b-4c3d-8e4f-0b0000000031\",\"00000032-1a2b-4c3d-8e4f-0b0000000032\",\"00000033-1a2b-4c3d-8e4f-0b0000000033\",\"00000034-1a2b-4c3d-8e4f-0b0000000034\",\"00000035-1a2b-4c3d-8e4f-0b0000000035\",\"00000036-1a2b-4c3d-8e4f-0b0000000036\",\"00000037-1a2b-4c3d-8e4f-0b0000000037\",\"00000038-1a2b-4c3d-8e4f-0b0000000038\",\"00000039-1a2b-4c3d-8e4f-0b0000000039\",\"0000003a-1a2b-4c3d-8e4f-0b000000003a\",\"0000003b-1a2b-4c3d-8e4f-0b000000003b\",\"0000003c-1a2b-4c3d-8e4f-0b000000003c\",\"0000003d-1a2b-4c3d-8e4f-0b000000003d\",\"0000003e-1a2b-4c3d-8e4f-0b000000003e\",\"0000003f-1a2b-4c3d-8e4f-0b000000003f\",\"00000040-1a2b-4c3d-8e4f-0b0000000040\",\"00000041-1a2b-4c3d-8e4f-0b0000000041\",\"00000042-1a2b-4c3d-8e4f-0b0000000042\",\"00000043-1a2b-4c3d-8e4f-0b0000000043\",\"00000044-1a2b-4c3d-8e4f-0b0000000044\",\"00000045-1a2b-4c3d-8e4f-0b0000000045\",\"00000046-1a2b-4c3d-8e4f-0b0000000046\",\"00000047-1a2b-4c3d-8e4f-0b0000000047\",\"00000048-1a2b-4c3d-8e4f-0b0000000048\",\"00000049-1a2b-4c3d-8e4f-0b0000000049\",\"0000004a-1a2b-4c3d-8e4f-0b000000004a\",\"0000004b-1a2b-4c3d-8e4f-0b000000004b\",\"0000004c-1a2b-4c3d-8e4f-0b000000004c\",\"0000004d-1a2b-4c3d-8e4f-0b000000004d\",\"0000004e-1a2b-4c3d-8e4f-0b000000004e\",\"0000004f-1a2b-4c3d-8e4f-0b000000004f\",\"00000050-1a2b-4c3d-8e4f-0b0000000050\",\"00000051-1a2b-4c3d-8e4f-0b0000000051\",\"00000052-1a2b-4c3d-8e4f-0b0000000052\",\"00000053-1a2b-4c3d-8e4f-0b0000000053\",\"00000054-1a2b-4c3d-8e4f-0b0000000054\",\"00000055-1a2b-4c3d-8e4f-0b0000000055\",\"00000056-1a2b-4c3d-8e4f-0b0000000056\",\"00000057-1a2b-4c3d-8e4f-0b0000000057\",\"00000058-1a2b-4c3d-8e4f-0b0000000058\",\"00000059-1a2b-4c3d-8e4f-0b0000000059\",\"0000005a-1a2b-4c3d-8e4f-0b000000005a\",\"0000005b-1a2b-4c3d-8e4f-0b000000005b\",\"0000005c-1a2b-4c3d-8e4f-0b000000005c\",\"0000005d-1a2b-4c3d-8e4f-0b000000005d\",\"0000005e-1a2b-4c3d-8e4f-0b000000005e\",\"0000005f-1a2b-4c3d-8e4f-0b000000005f\",\"00000060-1a2b-4c3d-8e4f-0b0000000060\",\"00000061-1a2b-4c3d-8e4f-0b0000000061\",\"00000062-1a2b-4c3d-8e4f-0b0000000062\",\"00000063-1a2b-4c3d-8e4f-0b0000000063\",\"00000064-1a2b-4c3d-8e4f-0b0000000064\",\"00000065-1a2b-4c3d-8e4f-0b0000000065\"]}",
+    "ResponseBody": "{\"message\":\"Cannot delete more than 100 notifications at once\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:08.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"22222222-3333-4444-8555-666666666666\"],\"read\":true}",
+    "ResponseBody": "{\"message\":\"Send either a list of ids or read, not both\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:09.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"message\":\"Send either a list of ids or read\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-08T21:35:10.725Z",
+    "Scheme": "http",
+    "scenarioName": "notifications_input_rejections"
+  }
+]
