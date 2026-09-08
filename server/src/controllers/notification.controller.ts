@@ -6,6 +6,7 @@ import {
   NotificationDeleteAllDto,
   NotificationDto,
   NotificationSearchDto,
+  NotificationStatisticsDto,
   NotificationUpdateAllDto,
   NotificationUpdateDto,
 } from 'src/dtos/notification.dto';
@@ -28,6 +29,19 @@ export class NotificationController {
   })
   getNotifications(@Auth() auth: AuthDto, @Query() dto: NotificationSearchDto): Promise<NotificationDto[]> {
     return this.service.search(auth, dto);
+  }
+
+  // Declared before @Get(':id') so /notifications/statistics is not captured by
+  // the id route, which would reject "statistics" as a malformed uuid.
+  @Get('statistics')
+  @Authenticated({ permission: Permission.NotificationRead })
+  @Endpoint({
+    summary: 'Retrieve notification statistics',
+    description: 'Retrieve the number of total and unread notifications for the current user.',
+    history: new HistoryBuilder().added('v2').beta('v2'),
+  })
+  getNotificationStatistics(@Auth() auth: AuthDto): Promise<NotificationStatisticsDto> {
+    return this.service.getStatistics(auth);
   }
 
   @Put()
