@@ -10,6 +10,11 @@ import { getExternalDomain } from 'src/utils/misc';
 @Injectable()
 export class NotificationAdminService extends BaseService {
   async create(auth: AuthDto, dto: NotificationCreateDto) {
+    const user = await this.userRepository.get(dto.userId, { withDeleted: false });
+    if (!user) {
+      throw new BadRequestException('User not found');
+    }
+
     const item = await this.notificationRepository.create({
       userId: dto.userId,
       type: dto.type ?? NotificationType.Custom,
