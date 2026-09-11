@@ -27,13 +27,14 @@ jobs:
           fetch-depth: 0
       - uses: skyramp/testbot@56fac3cc7b777cd08598ed7a7586f8d9733f3507 # v0.11.11
         with:
+          uiCredentials: 'admin@immich.test:EvalPass123!'
           skyrampMcpVersion: "0.4.1-rc.1"
           skyrampExecutorVersion: "v1.3.44"
           skyrampLicenseFile: ${{ secrets.SKYRAMP_LICENSE_FILE }}
-          anthropicApiKey: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropicApiKey: ${{ secrets.SKYRAMP_TESTBOT_API_KEY }}
           targetSetupCommand: './deployment-testbot/setup.sh'
           targetReadyCheckCommand: 'curl -f http://localhost:2285/api/server/ping'
-          targetReadyCheckTimeout: 600
-          authTokenCommand: './deployment-testbot/get-token.sh'
+          targetReadyCheckTimeout: '1800'
+          authTokenCommand: 'bash get-auth-token.sh'
           autoCommit: true
           postPrComment: true
