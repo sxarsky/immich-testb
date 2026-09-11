@@ -31,7 +31,7 @@ jobs:
           anthropicApiKey: ${{ secrets.SKYRAMP_TESTBOT_API_KEY }}
           targetSetupCommand: './deployment-testbot/setup.sh'
           targetReadyCheckCommand: 'curl -f http://localhost:2285/api/server/ping'
-          targetReadyCheckTimeout: 600
+          targetReadyCheckTimeout: 1800
           authTokenCommand: './deployment-testbot/get-token.sh'
           autoCommit: true
           postPrComment: true
