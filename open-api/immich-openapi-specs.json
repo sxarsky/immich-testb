@@ -7822,6 +7822,17 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "search",
+            "required": false,
+            "in": "query",
+            "description": "Filter by text in the title or description",
+            "schema": {
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7921,6 +7932,52 @@
         ],
         "x-immich-permission": "notification.update",
         "x-immich-state": "Stable"
+      }
+    },
+    "/notifications/statistics": {
+      "get": {
+        "description": "Retrieve the number of total and unread notifications for the current user.",
+        "operationId": "getNotificationStatistics",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationStatisticsDto"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          },
+          {
+            "cookie": []
+          },
+          {
+            "api_key": []
+          }
+        ],
+        "summary": "Retrieve notification statistics",
+        "tags": [
+          "Notifications"
+        ],
+        "x-immich-history": [
+          {
+            "version": "v2",
+            "state": "Added"
+          },
+          {
+            "version": "v2",
+            "state": "Beta"
+          }
+        ],
+        "x-immich-permission": "notification.read",
+        "x-immich-state": "Beta"
       }
     },
     "/notifications/{id}": {
@@ -20255,6 +20312,8 @@
           },
           "title": {
             "description": "Notification title",
+            "maxLength": 255,
+            "minLength": 1,
             "type": "string"
           },
           "type": {
@@ -20284,11 +20343,12 @@
             },
             "minItems": 1,
             "type": "array"
+          },
+          "read": {
+            "description": "Delete every notification the caller has already read",
+            "type": "boolean"
           }
         },
-        "required": [
-          "ids"
-        ],
         "type": "object"
       },
       "NotificationDto": {
@@ -20349,6 +20409,23 @@
           "info"
         ],
         "type": "string"
+      },
+      "NotificationStatisticsDto": {
+        "properties": {
+          "total": {
+            "description": "Number of notifications",
+            "type": "integer"
+          },
+          "unread": {
+            "description": "Number of unread notifications",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total",
+          "unread"
+        ],
+        "type": "object"
       },
       "NotificationType": {
         "description": "Notification type",
