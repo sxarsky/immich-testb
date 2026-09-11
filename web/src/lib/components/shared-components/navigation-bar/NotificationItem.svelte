@@ -3,6 +3,7 @@
   import { IconButton, Stack, Text } from '@immich/ui';
   import {
     mdiBackupRestore,
+    mdiClose,
     mdiImageAlbum,
     mdiImagePlus,
     mdiInformationOutline,
@@ -10,13 +11,17 @@
     mdiSync,
   } from '@mdi/js';
   import { DateTime } from 'luxon';
+  import { t } from 'svelte-i18n';
 
   interface Props {
     notification: NotificationDto;
     onclick: (notification: NotificationDto) => void;
+    onremove: (id: string) => void;
   }
 
-  let { notification, onclick }: Props = $props();
+  let { notification, onclick, onremove }: Props = $props();
+
+  const isRead = $derived(!!notification.readAt);
 
   const getAlertColor = (level: NotificationLevel) => {
     switch (level) {
@@ -99,35 +104,54 @@
   };
 </script>
 
-<button
-  class="min-h-20 w-full border-b border-gray-200 p-2 py-3 hover:bg-immich-primary/10 dark:border-immich-dark-gray dark:hover:bg-immich-dark-primary/10"
-  type="button"
-  onclick={() => onclick(notification)}
-  title={notification.createdAt}
->
-  <div class="grid grid-cols-[56px_1fr_32px] items-center gap-2">
-    <div class="flex place-content-center place-items-center">
-      <IconButton
-        icon={getIconType(notification.type)}
-        color={getAlertColor(notification.level)}
-        aria-label={notification.title}
-        shape="round"
-        class={getIconBgColor(notification.level)}
-        size="small"
-      ></IconButton>
-    </div>
+<div class="relative">
+  <button
+    class="min-h-20 w-full border-b border-gray-200 p-2 py-3 hover:bg-immich-primary/10 dark:border-immich-dark-gray dark:hover:bg-immich-dark-primary/10 {isRead
+      ? 'opacity-60'
+      : ''}"
+    data-testid="notification-item"
+    data-read={isRead}
+    type="button"
+    onclick={() => onclick(notification)}
+    title={notification.createdAt}
+  >
+    <div class="grid grid-cols-[56px_1fr_32px] items-center gap-2">
+      <div class="flex place-content-center place-items-center">
+        <IconButton
+          icon={getIconType(notification.type)}
+          color={getAlertColor(notification.level)}
+          aria-label={notification.title}
+          shape="round"
+          class={getIconBgColor(notification.level)}
+          size="small"
+        ></IconButton>
+      </div>
 
-    <Stack class="text-left" gap={1}>
-      <Text size="tiny" class="text-base text-black dark:text-white" fontWeight="semi-bold">{notification.title}</Text>
-      {#if notification.description}
-        <Text class="overflow-hidden text-gray-600 dark:text-gray-300">{notification.description}</Text>
+      <Stack class="text-left" gap={1}>
+        <Text size="tiny" class="text-base text-black dark:text-white" fontWeight="semi-bold">{notification.title}</Text>
+        {#if notification.description}
+          <Text class="overflow-hidden text-gray-600 dark:text-gray-300">{notification.description}</Text>
+        {/if}
+
+        <Text size="tiny" color="muted">{formatRelativeTime(notification.createdAt)}</Text>
+      </Stack>
+
+      {#if !notification.readAt}
+        <div class="size-2 justify-self-center rounded-full bg-primary text-right"></div>
       {/if}
+    </div>
+  </button>
 
-      <Text size="tiny" color="muted">{formatRelativeTime(notification.createdAt)}</Text>
-    </Stack>
-
-    {#if !notification.readAt}
-      <div class="size-2 justify-self-center rounded-full bg-primary text-right"></div>
-    {/if}
+  <div class="absolute top-2 right-2">
+    <IconButton
+      icon={mdiClose}
+      color="secondary"
+      variant="ghost"
+      shape="round"
+      size="small"
+      aria-label={$t('remove_notification')}
+      data-testid="notification-remove"
+      onclick={() => onremove(notification.id)}
+    />
   </div>
-</button>
+</div>
