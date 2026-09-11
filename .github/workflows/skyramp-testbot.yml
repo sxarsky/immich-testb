@@ -32,6 +32,7 @@ jobs:
           targetSetupCommand: './deployment-testbot/setup.sh'
           targetReadyCheckCommand: 'curl -f http://localhost:2285/api/server/ping'
           targetReadyCheckTimeout: 1800
-          authTokenCommand: './deployment-testbot/get-token.sh'
+          authTokenCommand: 'bash get-auth-token.sh'
+          uiCredentials: 'admin@immich.test:EvalPass123!'
           autoCommit: true
           postPrComment: true
