@@ -6,12 +6,39 @@
   import { handleError } from '$lib/utils/handle-error';
   import { NotificationType, type NotificationDto } from '@immich/sdk';
   import { Button, Icon, Scrollable, Stack, Text, toastManager } from '@immich/ui';
-  import { mdiBellOutline, mdiCheckAll } from '@mdi/js';
+  import { mdiBellOutline, mdiCheckAll, mdiTrashCanOutline } from '@mdi/js';
   import { t } from 'svelte-i18n';
   import { flip } from 'svelte/animate';
   import { fade } from 'svelte/transition';
 
-  const noUnreadNotifications = $derived(notificationManager.notifications.length === 0);
+  const noListedNotifications = $derived(notificationManager.notifications.length === 0);
+  const noUnreadNotifications = $derived(notificationManager.unreadCount === 0);
+  const noReadNotifications = $derived(notificationManager.readCount === 0);
+
+  const onSearchInput = async (event: Event) => {
+    await notificationManager.setSearchTerm((event.currentTarget as HTMLInputElement).value);
+  };
+
+  const onShowReadChange = async (event: Event) => {
+    await notificationManager.setShowRead((event.currentTarget as HTMLInputElement).checked);
+  };
+
+  const removeNotification = async (id: string) => {
+    try {
+      await notificationManager.remove(id);
+    } catch (error) {
+      handleError(error, $t('errors.failed_to_remove_notification'));
+    }
+  };
+
+  const clearRead = async () => {
+    try {
+      await notificationManager.clearRead();
+      toastManager.info($t('cleared_read_notifications'));
+    } catch (error) {
+      handleError(error, $t('errors.failed_to_remove_notification'));
+    }
+  };
 
   const markAsRead = async (id: string) => {
     try {
@@ -72,7 +99,7 @@
   <Stack class="max-h-125">
     <div class="mx-4 mt-4 flex items-center justify-between">
       <Text size="medium" color="secondary" fontWeight="semi-bold">{$t('notifications')}</Text>
-      <div>
+      <div class="flex items-center gap-1">
         <Button
           variant="ghost"
           disabled={noUnreadNotifications}
@@ -81,12 +108,42 @@
           color="primary"
           onclick={() => markAllAsRead()}>{$t('mark_all_as_read')}</Button
         >
+        <Button
+          variant="ghost"
+          disabled={noReadNotifications}
+          leadingIcon={mdiTrashCanOutline}
+          size="small"
+          color="primary"
+          data-testid="notification-clear-read"
+          onclick={() => clearRead()}>{$t('clear_read')}</Button
+        >
       </div>
     </div>
 
-    <hr class="dark:border-black" />
+    <div class="mx-4 mt-2 flex flex-col gap-2">
+      <input
+        type="search"
+        data-testid="notification-search"
+        aria-label={$t('search_notifications')}
+        placeholder={$t('search_notifications')}
+        value={notificationManager.searchTerm}
+        oninput={onSearchInput}
+        class="w-full rounded-2xl border border-gray-300 bg-white px-3 py-1.5 text-sm dark:border-gray-600 dark:bg-immich-dark-gray"
+      />
+      <label class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300">
+        <input
+          type="checkbox"
+          data-testid="notification-show-read"
+          checked={notificationManager.showRead}
+          onchange={onShowReadChange}
+        />
+        {$t('show_read_notifications')}
+      </label>
+    </div>
 
-    {#if noUnreadNotifications}
+    <hr class="mt-2 dark:border-black" />
+
+    {#if noListedNotifications}
       <Stack
         class="flex flex-col place-content-center place-items-center py-12 text-gray-700 dark:text-gray-300"
         gap={1}
@@ -99,7 +156,7 @@
         <Stack gap={0}>
           {#each notificationManager.notifications as notification (notification.id)}
             <div animate:flip={{ duration: 400 }}>
-              <NotificationItem {notification} {onclick} />
+              <NotificationItem {notification} {onclick} onremove={removeNotification} />
             </div>
           {/each}
         </Stack>
