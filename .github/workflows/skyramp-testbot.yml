@@ -25,8 +25,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: skyramp/testbot@v0.10.4
+      - uses: skyramp/testbot@56fac3cc7b777cd08598ed7a7586f8d9733f3507 # v0.11.11
         with:
+          skyrampMcpVersion: "0.4.1-rc.1"
+          skyrampExecutorVersion: "v1.3.44"
           skyrampLicenseFile: ${{ secrets.SKYRAMP_LICENSE_FILE }}
           anthropicApiKey: ${{ secrets.SKYRAMP_TESTBOT_API_KEY }}
           targetSetupCommand: './deployment-testbot/setup.sh'
