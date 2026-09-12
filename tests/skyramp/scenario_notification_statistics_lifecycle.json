@@ -1,0 +1,299 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"email\":\"admin@immich.test\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:48.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"total\":0,\"unread\":0}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/statistics",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:49.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbot-stats-alpha\"}",
+    "ResponseBody": "{\"id\":\"0298a999-0aaa-4253-b96b-1b8818976161\",\"title\":\"testbot-stats-alpha\",\"level\":\"info\",\"type\":\"Custom\",\"createdAt\":\"2026-09-12T18:00:00.000Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:50.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbot-stats-bravo\"}",
+    "ResponseBody": "{\"id\":\"2bda2b4a-f7f7-4551-bba1-126ccfb0a849\",\"title\":\"testbot-stats-bravo\",\"level\":\"info\",\"type\":\"Custom\",\"createdAt\":\"2026-09-12T18:00:00.000Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:51.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"total\":2,\"unread\":2}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/statistics",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:52.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"readAt\":\"2026-09-12T18:00:00.000Z\"}",
+    "ResponseBody": "{\"id\":\"0298a999-0aaa-4253-b96b-1b8818976161\",\"title\":\"testbot-stats-alpha\",\"readAt\":\"2026-09-12T18:00:00.000Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications/0298a999-0aaa-4253-b96b-1b8818976161",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:53.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"total\":2,\"unread\":1}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/statistics",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:54.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"read\":true}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:55.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"total\":1,\"unread\":1}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/statistics",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:56.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications/2bda2b4a-f7f7-4551-bba1-126ccfb0a849",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:57.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"total\":0,\"unread\":0}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/statistics",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:53:58.422Z",
+    "Scheme": "http",
+    "scenarioName": "notification_statistics_lifecycle"
+  }
+]

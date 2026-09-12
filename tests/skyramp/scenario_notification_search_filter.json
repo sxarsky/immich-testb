@@ -1,0 +1,296 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"email\":\"admin@immich.test\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:11.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbotsearchalpha\",\"description\":\"testbotcharliedesc\"}",
+    "ResponseBody": "{\"id\":\"0298a999-0aaa-4253-b96b-1b8818976161\",\"title\":\"testbotsearchalpha\",\"description\":\"testbotcharliedesc\",\"level\":\"info\",\"type\":\"Custom\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:12.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbotsearchbravo\"}",
+    "ResponseBody": "{\"id\":\"2bda2b4a-f7f7-4551-bba1-126ccfb0a849\",\"title\":\"testbotsearchbravo\",\"level\":\"info\",\"type\":\"Custom\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:13.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"id\":\"0298a999-0aaa-4253-b96b-1b8818976161\",\"title\":\"testbotsearchalpha\",\"description\":\"testbotcharliedesc\",\"level\":\"info\",\"type\":\"Custom\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "testbotsearchalpha"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:14.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"id\":\"0298a999-0aaa-4253-b96b-1b8818976161\",\"title\":\"testbotsearchalpha\",\"description\":\"testbotcharliedesc\",\"level\":\"info\",\"type\":\"Custom\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "testbotcharliedesc"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:15.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "testbotzulunosuchterm"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:16.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        ""
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:17.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Validation failed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:18.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:19.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"0298a999-0aaa-4253-b96b-1b8818976161\",\"2bda2b4a-f7f7-4551-bba1-126ccfb0a849\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:54:20.608Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_filter"
+  }
+]

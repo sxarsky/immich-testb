@@ -1,0 +1,164 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"email\":\"admin@immich.test\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:13.833Z",
+    "Scheme": "http",
+    "scenarioName": "notification_update_after_clear_read"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbot-stale-update\"}",
+    "ResponseBody": "{\"id\":\"9a6d1b6d-794d-4d68-ba2e-acad25258b01\",\"title\":\"testbot-stale-update\",\"level\":\"info\",\"type\":\"Custom\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:14.833Z",
+    "Scheme": "http",
+    "scenarioName": "notification_update_after_clear_read"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"readAt\":\"2026-09-12T18:00:00.000Z\"}",
+    "ResponseBody": "{\"id\":\"9a6d1b6d-794d-4d68-ba2e-acad25258b01\",\"title\":\"testbot-stale-update\",\"readAt\":\"2026-09-12T18:00:00.000Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications/9a6d1b6d-794d-4d68-ba2e-acad25258b01",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:15.833Z",
+    "Scheme": "http",
+    "scenarioName": "notification_update_after_clear_read"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"read\":true}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:16.833Z",
+    "Scheme": "http",
+    "scenarioName": "notification_update_after_clear_read"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"message\":\"Notification not found\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications/9a6d1b6d-794d-4d68-ba2e-acad25258b01",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:17.833Z",
+    "Scheme": "http",
+    "scenarioName": "notification_update_after_clear_read"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"readAt\":null}",
+    "ResponseBody": "{\"message\":\"Notification not found\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PUT",
+    "Path": "/api/notifications/9a6d1b6d-794d-4d68-ba2e-acad25258b01",
+    "QueryParams": {},
+    "StatusCode": 404,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:18.833Z",
+    "Scheme": "http",
+    "scenarioName": "notification_update_after_clear_read"
+  }
+]

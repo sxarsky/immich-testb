@@ -1,0 +1,172 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"email\":\"admin@immich.test\",\"isAdmin\":true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/users/me",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:05.645Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_literal_wildcard"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbotpctanchor\"}",
+    "ResponseBody": "{\"id\":\"0298a999-0aaa-4253-b96b-1b8818976161\",\"title\":\"testbotpctanchor\",\"level\":\"info\",\"type\":\"Custom\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:06.645Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_literal_wildcard"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"userId\":\"0e7daf0f-ad03-4799-9847-dd1255cc0016\",\"title\":\"testbotpct50%off\"}",
+    "ResponseBody": "{\"id\":\"2bda2b4a-f7f7-4551-bba1-126ccfb0a849\",\"title\":\"testbotpct50%off\",\"level\":\"info\",\"type\":\"Custom\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/admin/notifications",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:07.645Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_literal_wildcard"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"id\":\"2bda2b4a-f7f7-4551-bba1-126ccfb0a849\",\"title\":\"testbotpct50%off\",\"level\":\"info\",\"type\":\"Custom\"}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "%"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:08.645Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_literal_wildcard"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/notifications",
+    "QueryParams": {
+      "search": [
+        "_estbotpctanchor"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:09.645Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_literal_wildcard"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"ids\":[\"0298a999-0aaa-4253-b96b-1b8818976161\",\"2bda2b4a-f7f7-4551-bba1-126ccfb0a849\"]}",
+    "ResponseBody": "{}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/notifications",
+    "QueryParams": {},
+    "StatusCode": 204,
+    "Port": 2285,
+    "Timestamp": "2026-09-12T18:56:10.645Z",
+    "Scheme": "http",
+    "scenarioName": "notification_search_literal_wildcard"
+  }
+]
